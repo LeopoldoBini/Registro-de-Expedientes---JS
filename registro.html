@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Registro de Expedientes</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Registro de Expedientes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+          <a class="nav-link active" href="registro.html">Registro</a>
+
+
+        </div>
+
+      </div>
+      <div class="cotizacion">
+        <p> Dolar Compra : $ <span id="cotizacionDolarComprador"></span> <br> Dolar Venta: $ <span
+            id="cotizacionDolarVenta"></span></p>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div>
+      <div class="container-fluid titulosPrimeros">
+
+        <h1 id="tituloUno">Listado de Procedimientos</h1>
+
+
+
+
+
+        <div class="titulos-derecha">
+          <h5 class="fw-bold">Aplicar filtros:</h5>
+          <div class="botones">
+            <button class="btn btn-light botonFiltro" value="esteMes" id="btnEsteMes"> Este mes:
+              <kbd class="badge rounded-pill bg-secondary" id="kbdEsteMes"></kbd>
+            </button>
+            <button class="btn btn-dark botonFiltro" value="total" id="btnTodos">ver todo
+            </button>
+            <button class="btn btn-danger botonFiltro" value="hoy" id="btnHoy">Aperturas de Hoy
+              <!-- <br><kbd id="kbdHoy">HOY</kbd> -->
+            </button>
+          </div>
+          <div>
+            <h5 class="fw-italic">Buscar Mes:</h5>
+            <div class="input-group gurpoFiltroPorMes">
+              <select class="form-select form-select-sm" id="inputFiltroMes"
+                aria-label="Example select with button addon">
+                <option selected value="" class="text-center">Mes...</option>
+
+              </select>
+              <select class="form-select form-select-sm" id="inputFiltroAnio"
+                aria-label="Example select with button addon">
+                <option selected value="" class="text-center">Año...</option>
+              </select>
+              <button class="btn btn-outline-secondary btn-sm" id="btnFiltroMesPersonalizado"
+                type="button">🔎</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="titulosSegundos text-center font-monospace">
+
+        <h2>Registro de: <span id="spanTitulo"> ¿?</span></h2>
+      </div>
+
+    </div>
+    <div class="container-fluid" id="contenedorTabla">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="dinone" scope="col">id</th>
+            <th order="1" scope="col">Semanal</th>
+            <th order="2" scope="col">Dia</th>
+            <th order="3" scope="col">Hora</th>
+            <th order="4" scope="col">Tipo</th>
+            <th order="5" scope="col">N°</th>
+            <th order="6" scope="col">Año</th>
+            <th order="7" scope="col">Detalle</th>
+            <th order="8" scope="col">Organismo</th>
+            <th order="9" scope="col">Apertura</th>
+            <th order="10" scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaBody">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  
+
+
+  <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="modalPaEliminarTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h5 class="modal-title  text-center" id="modalPaEliminarTitle">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="modalPaEliminar" class="modal-body">
+          <p  class="text-center">Está seguro que desea eliminar el Procedimiento: <br>
+            <span id="objetoProc"></span>?<br>
+            <span class="font-weight-light"> 
+            si lo hace no podrá recuperar la información del mismo al menos que recurra a un técnico...</p>
+          </span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="noEliminar">No</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="eliminarNomas">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/tipoDeTipos.js"></script>
+  <script src="js/registro.js"></script>
+</body>
+
+</html>

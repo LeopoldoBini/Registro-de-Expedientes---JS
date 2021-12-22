@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Bienvenido</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Registro de Expedientes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          <a class="nav-link" href="registro.html">Registro</a>
+
+
+        </div>
+      </div>
+      <div class="cotizacion">
+        <p> Dolar Compra : $ <span id="cotizacionDolarComprador"></span> <br> Dolar Venta: $ <span
+            id="cotizacionDolarVenta"></span></p>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="container titulos">
+      <h1>Bienvenido al Registro de Compras</h1>
+
+
+    </div>
+
+    <div class="container formProc">
+      <h2>Cargar Procedimiento</h2>
+
+      <form>
+        <div class="numeroAnio">
+          <div class="mb-3 col-3">
+            <label for="inputTipoProc" class="form-label">Tipo de Procedimiento:</label>
+            <select class="form-select inputProc" id="inputTipoProc">
+              <option selected>Seleccionar..</option>
+              <option value="1">Licitación Pública</option>
+              <option value="2">Contratación Abreviada</option>
+              <option value="3">Adjudicación Simple</option>
+            </select>
+          </div>
+          <div class="mb-3 col-2">
+            <label for="inputNumProc" class="form-label">Numero:</label>
+            <input type="number" class="form-control inputProc" id="inputNumProc">
+          </div>
+          <div class="mb-3 col-2">
+            <label for="inputAnioProc" class="form-label">Año:</label>
+            <input type="number" class="form-control inputProc" id="inputAnioProc" placeholder="2021">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="inputDetalleProc" class="form-label">Detalle:</label>
+          <input type="text" class="form-control inputProc" id="inputDetalleProc">
+        </div>
+        <div class="numeroAnio">
+          <div class="mb-3 col-4">
+            <label for="inputOrganismoProc" class="form-label">Organismo Contratante:</label>
+            <select class="form-select inputProc" id="inputOrganismoProc">
+              <option selected>Ministerio de...</option>
+              <option value="1">911</option>
+              <option value="2">CAG</option>
+              <option value="3">CENCONV</option>
+              <option value="4">CRH</option>
+              <option value="5">CRyRP</option>
+              <option value="6">DGR</option>
+              <option value="7">HAO</option>
+              <option value="8">HPMI</option>
+              <option value="9">HSB</option>
+              <option value="10">IPSS</option>
+              <option value="11">MDS</option>
+              <option value="12">ME</option>
+              <option value="13">MECYT</option>
+              <option value="14">MG</option>
+              <option value="15">MI</option>
+              <option value="16">MP</option>
+              <option value="17">MS</option>
+              <option value="18">MSP</option>
+              <option value="19">MTD</option>
+              <option value="20">SC</option>
+              <option value="21">SGG</option>
+              <option value="22">TCSE</option>
+              <option value="23">TELEFERICO</option>
+              <option value="24">TREN</option>
+
+            </select>
+
+          </div>
+          <div class="mb-3 col-2">
+            <label for="inputFechaAperturaProc" class="form-label">Fecha de Apertura:</label>
+            <input type="date" class="form-control inputProc" id="inputFechaAperturaProc">
+          </div>
+          <div class="mb-3 col-2">
+            <label for="horaAperturaProc" class="form-label">Hora de Apertura:</label>
+            <!-- <input type="time" class="form-control" id="horaAperturaProc" min="09:00" max="13:00"> -->
+            <select class="form-select inputProc" id="inputHoraAperturaProc">
+              <option selected>00:00...</option>
+              <option value="10:00">10:00</option>
+              <option value="10:30">10:30</option>
+              <option value="11:00">11:00</option>
+              <option value="11:30">11:30</option>
+              <option value="12:00">12:00</option>
+              <option value="12:30">12:30</option>
+              <option value="13:00">13:00</option>
+            </select>
+          </div>
+        </div>
+        <button id="btnCargProc" type="submit" class="btn btn-primary">Cargar Procedimiento</button>
+      </form>
+
+      <p id="validaciones"></p>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/tipoDeTipos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

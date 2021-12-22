@@ -1,0 +1,65 @@
+
+.formProc{
+    align-items: center;
+    max-width: 1200px;
+}
+.formProc h2{
+    padding-left: 75px;
+}
+.formProc form{ 
+    margin: 40px auto;
+    max-width: 1000px;
+}
+.formProc form .numeroAnio{
+    display: flex;
+}
+.formProc form .numeroAnio div {
+    margin-right: 5%;
+}
+#btnCargProc{ 
+    margin: 15px auto;
+}
+p{
+    margin: auto;
+}
+.dinone{
+    display: none;
+}
+.titulosPrimeros{
+    display: flex;
+    justify-content: space-between;
+    margin: 35px 25px;
+    padding-right: 100px;
+    
+}
+#tituloUno{
+    margin: auto 20px;
+}
+.botones{
+    width: 500px;
+    display: grid;
+    grid-template-areas: "tres uno dos";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 7.5%;
+}
+
+#btnEsteMes{
+    grid-area: uno;
+
+}
+
+#btnTodos{
+    grid-area: dos;
+}
+
+#btnHoy{
+    grid-area: tres;
+}
+
+.cotizacion{
+    width: 300px;
+    margin-right: 50px;
+}
+.divisorDia{
+    border-bottom: 2px solid black;
+}
